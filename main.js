@@ -10,7 +10,12 @@ const volunteering = document.querySelector("#volunteering");
 const button = document.querySelector("#create");
 
 function extractText(element) {
-  return element.value;
+  var originalText = element.value;
+  var delimiter = originalText.split(",");
+  for (let i = 0; i < delimiter.length; i++) {
+    delimiter[i].trim();
+  }
+  return delimiter;
 }
 
 function serialise() {
@@ -25,13 +30,19 @@ function serialise() {
     project: extractText(project),
     volunteering: extractText(volunteering),
   };
-  for (let a = 0; a < Object.values(info).length; a++) {
+  /* for (let a = 0; a < Object.values(info).length; a++) {
     var match = Object.values(info)[a].split(", ");
-    console.log(match);
-  }
+    if (match.length > 1) {
+      var index = Object.keys(info)[a];
+      console.log(index);
+      console.log(match);
+      info[index].value = match;
+    }
+  } */
   cleanedInfo = Object.fromEntries(
     Object.entries(info).filter(([_, v]) => v != null)
   );
+  console.log(info);
   return JSON.stringify(cleanedInfo);
 }
 
