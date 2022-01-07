@@ -1,0 +1,34 @@
+{
+  "Internships": {
+    "first": "Assisted in designing client-side interface for X, indirectly causing a 2-month delay to production",
+    "second": "As a consultant with X, assisted client with Y causing client to switch consulting firms"
+  },
+  "Languages": {
+    "first": "Successfully completed beginner course in after failing 4 times",
+    "second": "Guided a team of 3 to write a “Hello World” program in X",
+    "third": "Wrote 7 consecutive lines of  without compiler errors",
+    "fourth": "Completed a Level-1000 module taught in X"
+  },
+  "Projects": {
+    "first": "Involved in a project for X, assisted in a spectacularly late submission",
+    "second": "Contributed one line of comment in X",
+    "third": "Helped remove print debug messages in X",
+    "fourth": "",
+    "fifth": "",
+    "sixth": ""
+  },
+  "Technical": {
+    "first": "Learnt frameworks X during Orbital, but have forgotten all of them since",
+    "second": "Experience with X during a module two years ago, forgot everything since",
+    "third": "Watched a youtube video about X three years ago",
+    "fourth": "Tried working with X during a personal project, ditched it after 2 days",
+    "fifth": "",
+    "sixth": "",
+    "git": "Experience with Git in projects, helping to delete 3 days’ worth of progress during a hackathon using Git"
+  },
+  "Volunteering": {
+    "first": "Planned and executed X, eventually almost reaching our target",
+    "second": "Successfully delayed committee progress as a member of the X team",
+    "third": ""
+  }
+}
