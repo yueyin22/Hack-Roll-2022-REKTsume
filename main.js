@@ -19,8 +19,11 @@ $(function(){
     project: extractText(project),
     volunteering: extractText(volunteering),
   };
-  var match = infoDelimit.split(', ')
-  console.log(match)
+  for (let a=0; a<Object.keys(infoDelimit).length; a++) {
+    var match = a.split(', ');
+    console.log(match);
+  }
+  
   for (var a in match)
   {
       var variable = match[a]
