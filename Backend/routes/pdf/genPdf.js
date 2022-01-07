@@ -3,7 +3,7 @@ const router = express.Router();
 const { PythonShell } = require("python-shell");
 
 // Change to post
-router.get("/pdf", (req, res) => {
+router.post("/pdf", (req, res) => {
   let options = {
     mode: "text",
     pythonPath: "C:/Python38/python.exe",

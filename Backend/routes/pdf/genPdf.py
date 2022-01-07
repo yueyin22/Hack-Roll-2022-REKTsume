@@ -2,7 +2,7 @@ from fpdf import FPDF
 import sys, json
 
 def loadResumeDb():
-	f = open('db.json')
+	f = open('./routes/pdf/db.json', encoding="utf8")
 	db = json.load(f)
 	f.close()
 	return db
