@@ -3,6 +3,17 @@
   <head>
     <title>REKTsume</title>
     <link rel="icon" type="image/x-icon" href="/Images/cv.png" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+    />
   </head>
 
   <meta charset="UTF-8" />
@@ -18,7 +29,8 @@
               <img class="logo" src="Images/cv.png" />
               <h3>REKTsume</h3>
               <p>one-stop resume builder for a <b>Risible</b>, <b>Ridiculous</b> & <b>Ruination</b> experience </p>
-                <div class="col-md-10">
+              <form class="requires-validation" novalidate></form>  
+              <div class="col-md-10">
                   <input
                     class="form-control"
                     type="text"
@@ -91,7 +103,16 @@
                   />
                 </div>
                 <br />
-                <div class="form-check">
+                
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label">I confirm that all data are correct</label>
+                   <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+                  </div>
+                  <!--
+
+                    <div class="form-check">
                   <input
                     class="form-check-input"
                     type="checkbox"
@@ -100,8 +121,10 @@
                   />
                   <label class="form-check-label"
                     >I confirm that all data are correct</label
-                  >
+                  > 
+                
                 </div>
+                -->
                 <div class="form-button mt-3">
                   <button id="create">Generate Resume</button>
                 </div>
@@ -111,8 +134,14 @@
         </div>
       </div>
     </div>
-  </body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   <script type="text/javascript" src="./main.js"></script>
+  </body>
+  
 </html>
 
 <!-- 
