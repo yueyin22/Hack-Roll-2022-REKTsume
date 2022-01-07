@@ -1,5 +1,5 @@
 {
-  "Internships": {
+  "Experience": {
     "first": "Assisted in designing client-side interface for X, indirectly causing a 2-month delay to production",
     "second": "As a consultant with X, assisted client with Y causing client to switch consulting firms"
   },
@@ -8,14 +8,6 @@
     "second": "Guided a team of 3 to write a “Hello World” program in X",
     "third": "Wrote 7 consecutive lines of  without compiler errors",
     "fourth": "Completed a Level-1000 module taught in X"
-  },
-  "Projects": {
-    "first": "Involved in a project for X, assisted in a spectacularly late submission",
-    "second": "Contributed one line of comment in X",
-    "third": "Helped remove print debug messages in X",
-    "fourth": "",
-    "fifth": "",
-    "sixth": ""
   },
   "Technical": {
     "first": "Learnt frameworks X during Orbital, but have forgotten all of them since",
@@ -26,9 +18,27 @@
     "sixth": "",
     "git": "Experience with Git in projects, helping to delete 3 days’ worth of progress during a hackathon using Git"
   },
+  "Soft": {
+    "first": "Took the limelight of my team's work without putting any effort due to my excellent X skills",
+    "second": "Managed to climb the corporate ladder in 6 months due to my X and bootlicking skills",
+    "third": "Displayed X that frightened my colleagues and managers",
+    "fourth": "Achieved first-hand knowledge of the pantry supplies due to my X skills",
+    "fifth": "Practiced my X skills even in my sleep",
+    "sixth": "",
+    
+  },
+  "Projects": {
+    "first": "Involved in a project for X, assisted in a spectacularly late submission",
+    "second": "Contributed one line of comment in X",
+    "third": "Helped remove print debug messages in X",
+    "fourth": "",
+    "fifth": "",
+    "sixth": ""
+  },
+
   "Volunteering": {
     "first": "Planned and executed X, eventually almost reaching our target",
     "second": "Successfully delayed committee progress as a member of the X team",
-    "third": ""
+    "third": "Organised a X drive and overslept on the actual day"
   }
 }
