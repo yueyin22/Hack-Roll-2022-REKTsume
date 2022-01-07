@@ -1,14 +1,9 @@
 from fpdf import FPDF
 import sys, json
 
-def loadResumeDb():
-	f = open('./routes/pdf/db.json', encoding="utf8")
-	db = json.load(f)
-	f.close()
-	return db
-
-info = sys.argv[1]
+info = json.loads(sys.argv[1])
 studentName = info["studentName"]
+email = info["email"]
 education = info["education"]
 experience = info["experience"]
 progLang = info["programmingLanguage"]
@@ -16,6 +11,22 @@ techSkill = info["techSkill"]
 softSkill = info["softSkill"]
 projects = info["project"]
 volunteering = info["volunteering"]
+
+convert = {
+	"education": "Education",
+	"experience": "Work Experience",
+	"programmingLanguage" : "Programming Languages",
+	"techSkill" : "Technical Skills",
+	"softSkill" : "Soft Skills",
+	"project" : "Projects",
+	"volunteering" : "Volunteering"
+}
+
+def loadResumeDb():
+	f = open('./routes/pdf/db.json', encoding="utf8")
+	db = json.load(f)
+	f.close()
+	return db
 
 class PDF(FPDF):	
 	# Name and email
@@ -29,7 +40,7 @@ class PDF(FPDF):
 		#------------------Email--------------------
 		self.set_font('Arial', '', 14)
 		self.cell(80)
-		self.cell(30, 10, 'fuxi_xia@u.nus.edu', 0, 0, 'C')
+		self.cell(30, 10, email, 0, 0, 'C')
 		# Line Break
 		self.ln(10)
 		
@@ -40,8 +51,8 @@ class PDF(FPDF):
 		self.cell(0, 10, str(self.page_no()), 0, 0, 'C')
 
 def setColor(pdf):
-	pdf.set_draw_color(151, 151, 151)
-	pdf.set_fill_color(151, 151, 151)
+	pdf.set_draw_color(160, 160, 160)
+	pdf.set_fill_color(160, 160, 160)
 
 def setSectionHeader(pdf, header):
 	setColor(pdf)
@@ -57,6 +68,10 @@ if __name__ == "__main__":
 	pdf.alias_nb_pages()
 	pdf.add_page()
 	pdf.set_font('Arial', '', 12)
-	setSectionHeader(pdf, 'PROJECTS')
-	populateSection(pdf)
+	print("here")
+	for key, value in info.items():
+		if key == "studentName" or key == "email":
+			continue
+		setSectionHeader(pdf, convert[key])
+		populateSection(pdf, convert[key])
 	pdf.output('tut2.pdf', 'F')

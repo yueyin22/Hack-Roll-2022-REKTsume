@@ -1,4 +1,5 @@
 const studentName = document.querySelector("#name");
+const email = document.querySelector("#email");
 const education = document.querySelector("#education");
 const experience = document.querySelector("#experience");
 const programmingLanguage = document.querySelector("#programmingLanguage");
@@ -38,6 +39,7 @@ function extractText(element) {
 function serialise() {
   var info = {
     studentName: extractText(studentName),
+    email: extractText(email),
     education: extractText(education),
     experience: extractText(experience),
     programmingLanguage: extractText(programmingLanguage),
@@ -49,7 +51,6 @@ function serialise() {
   cleanedInfo = Object.fromEntries(
     Object.entries(info).filter(([_, v]) => v != null)
   );
-  console.log(JSON.stringify(cleanedInfo));
   return JSON.stringify(cleanedInfo);
 }
 
@@ -82,18 +83,20 @@ button.addEventListener("click", () => {
 });
 
 (function () {
-  'use strict'
-  const forms = document.querySelectorAll('.requires-validation')
-  Array.from(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
+  "use strict";
+  const forms = document.querySelectorAll(".requires-validation");
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
         if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
+          event.preventDefault();
+          event.stopPropagation();
         }
-  
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
-  
+
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
