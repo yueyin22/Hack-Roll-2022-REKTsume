@@ -1,9 +1,10 @@
 from fpdf import FPDF
 import sys, json, random
+import unicodedata
 
 # Convert list object to string
 def listToString(list):
-	return ' '.join(map(str, list))
+	return ','.join(map(str, list))
 
 # Open resume db
 f = open('./routes/pdf/db.json', encoding="utf8")
@@ -65,13 +66,17 @@ def checkSection(section):
 def getDbSize(key):
 	return len(db[key])
 
+def unicode_normalise(s):
+	normalised = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
+	return normalised.decode()
+
 def populateSection(pdf, section):
 	if section == "Education":
 		pdf.cell(0, 8, education, 0, 1, 'L')
 	else:
 		target = checkSection(section)
 		answer = listToString(info[target])
-		answers = answer.split()
+		answers = answer.split(",")
 		if len(answers) < 2:
 			answerPool = getDbSize(section)
 			# Special section
@@ -79,19 +84,24 @@ def populateSection(pdf, section):
 				answerPool -= 1
 			selectedIndex = random.randint(0, answerPool-1)
 			index = str(selectedIndex)
-			completedText = db[section][index].replace('$dynamic', answer)
-			pdf.cell(0, 8, "-" + completedText, 0, 1, 'L')
+			replacedText = db[section][index].replace('$dynamic', answer)
+			completedText = "- " + unicode_normalise(replacedText)
+			pdf.cell(0, 8, completedText, 0, 1, 'L')
 		else:
 			numberOfEntries = len(answers)
 			answerPool = getDbSize(section)
+			# Special section
+			if section == "Technical Skills":
+				answerPool -= 1
 			usedPool = []
 			for i in range(numberOfEntries):
 				selectedIndex = random.randint(0, answerPool-1)
 				while selectedIndex in usedPool:
 					selectedIndex = random.randint(0, answerPool-1)
 				index = str(selectedIndex)
-				completedText = db[section][index].replace('$dynamic', answer)
-				pdf.cell(0, 8, "-" + completedText, 0, 1, 'L')
+				replacedText = db[section][index].replace('$dynamic', answers[i])
+				completedText = "- " + unicode_normalise(replacedText)
+				pdf.cell(0, 8, completedText, 0, 1, 'L')
 				usedPool.append(index)
 			
 
