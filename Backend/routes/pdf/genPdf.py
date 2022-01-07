@@ -12,6 +12,16 @@ softSkill = info["softSkill"]
 projects = info["project"]
 volunteering = info["volunteering"]
 
+convert = {
+	"education": "Education",
+	"experience": "Work Experience",
+	"programmingLanguage" : "Programming Languages",
+	"techSkill" : "Technical Skills",
+	"softSkill" : "Soft Skills",
+	"project" : "Projects",
+	"volunteering" : "Volunteering"
+}
+
 def loadResumeDb():
 	f = open('./routes/pdf/db.json', encoding="utf8")
 	db = json.load(f)
@@ -41,14 +51,14 @@ class PDF(FPDF):
 		self.cell(0, 10, str(self.page_no()), 0, 0, 'C')
 
 def setColor(pdf):
-	pdf.set_draw_color(151, 151, 151)
-	pdf.set_fill_color(151, 151, 151)
+	pdf.set_draw_color(160, 160, 160)
+	pdf.set_fill_color(160, 160, 160)
 
 def setSectionHeader(pdf, header):
 	setColor(pdf)
 	pdf.cell(0, 8, header, 1, 1, 'L', True)
 
-def populateSection(pdf):
+def populateSection(pdf, section):
 	pdf.cell(0, 8, '- Messed up overseas volunteering project', 0, 1, 'L')
 
 
@@ -58,9 +68,10 @@ if __name__ == "__main__":
 	pdf.alias_nb_pages()
 	pdf.add_page()
 	pdf.set_font('Arial', '', 12)
+	print("here")
 	for key, value in info.items():
 		if key == "studentName" or key == "email":
 			continue
-		setSectionHeader(pdf, key)
-		populateSection(pdf)
+		setSectionHeader(pdf, convert[key])
+		populateSection(pdf, convert[key])
 	pdf.output('tut2.pdf', 'F')
