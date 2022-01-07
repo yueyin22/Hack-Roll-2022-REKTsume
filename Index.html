@@ -28,9 +28,12 @@
             <div class="form-items">
               <img class="logo" src="Images/cv.png" />
               <h3>REKTsume</h3>
-              <p>one-stop resume builder for a <b>Risible</b>, <b>Ridiculous</b> & <b>Ruination</b> experience </p>
-              <form class="requires-validation" novalidate></form>  
-              <div class="col-md-10">
+              <p>
+                one-stop resume builder for a <b>Risible</b>,
+                <b>Ridiculous</b> & <b>Ruination</b> experience
+              </p>
+              <form class="requires-validation" novalidate>
+                <div class="col-md-10">
                   <input
                     class="form-control"
                     type="text"
@@ -38,7 +41,12 @@
                     placeholder="Name"
                     required
                   />
+                  <div class="valid-feedback">Name field is valid!</div>
+                  <div class="invalid-feedback">
+                    Name field cannot be blank!
+                  </div>
                 </div>
+
                 <div class="col-md-10">
                   <input
                     class="form-control"
@@ -47,15 +55,23 @@
                     placeholder="Education"
                     required
                   />
+                  <div class="valid-feedback">Education field is valid!</div>
+                  <div class="invalid-feedback">
+                    Education field cannot be blank!
+                  </div>
                 </div>
                 <div class="col-md-10">
-                    <input
-                      class="form-control"
-                      type="experience"
-                      id="experience"
-                      placeholder="Experience (E.g. VISA, Grab, Shoppee)"
-                      required
-                    />
+                  <input
+                    class="form-control"
+                    type="experience"
+                    id="experience"
+                    placeholder="Experience (E.g. VISA, Grab, Shoppee)"
+                    required
+                  />
+                  <div class="valid-feedback">Experience field is valid!</div>
+                  <div class="invalid-feedback">
+                    Experience field cannot be blank!
+                  </div>
                 </div>
                 <div class="col-md-10">
                   <input
@@ -65,6 +81,12 @@
                     placeholder="Programming Language (E.g. Java, C#, Python)"
                     required
                   />
+                  <div class="valid-feedback">
+                    Programming Language field is valid!
+                  </div>
+                  <div class="invalid-feedback">
+                    Programming Language field cannot be blank!
+                  </div>
                 </div>
                 <div class="col-md-10">
                   <input
@@ -74,6 +96,12 @@
                     placeholder="Technical Skill (E.g. MS Office, Web, Graphics)"
                     required
                   />
+                  <div class="valid-feedback">
+                    Technical Skill field is valid!
+                  </div>
+                  <div class="invalid-feedback">
+                    Technical Skill field cannot be blank!
+                  </div>
                 </div>
                 <div class="col-md-10">
                   <input
@@ -83,6 +111,10 @@
                     placeholder="Soft Skill (E.g. Communication, Problem-solving)"
                     required
                   />
+                  <div class="valid-feedback">Soft Skill field is valid!</div>
+                  <div class="invalid-feedback">
+                    Soft Skill field cannot be blank!
+                  </div>
                 </div>
                 <div class="col-md-10">
                   <input
@@ -92,6 +124,10 @@
                     placeholder="Project (E.g. Calculator, Game, Website)"
                     required
                   />
+                  <div class="valid-feedback">Project field is valid!</div>
+                  <div class="invalid-feedback">
+                    Project field cannot be blank!
+                  </div>
                 </div>
                 <div class="col-md-10">
                   <input
@@ -101,16 +137,29 @@
                     placeholder="Volunteering (E.g. Food, Elderly, Children)"
                     required
                   />
+                  <div class="valid-feedback">Volunteering field is valid!</div>
+                  <div class="invalid-feedback">
+                    Volunteering field cannot be blank!
+                  </div>
                 </div>
                 <br />
-                
 
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                    <label class="form-check-label">I confirm that all data are correct</label>
-                   <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="invalidCheck"
+                    required
+                  />
+                  <label class="form-check-label"
+                    >I confirm that all data are correct</label
+                  >
+                  <div class="invalid-feedback">
+                    Please confirm that the entered data are all correct!
                   </div>
-                  <!--
+                </div>
+                <!--
 
                     <div class="form-check">
                   <input
@@ -139,9 +188,8 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-  <script type="text/javascript" src="./main.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
   </body>
-  
 </html>
 
 <!-- 
