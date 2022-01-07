@@ -1,4 +1,5 @@
 const studentName = document.querySelector("#name");
+const email = document.querySelector("#email");
 const education = document.querySelector("#education");
 const experience = document.querySelector("#experience");
 const programmingLanguage = document.querySelector("#programmingLanguage");
@@ -15,6 +16,7 @@ function extractText(element) {
 function serialise() {
   var info = {
     studentName: extractText(studentName),
+    email: extractText(email),
     education: extractText(education),
     experience: extractText(experience),
     programmingLanguage: extractText(programmingLanguage),

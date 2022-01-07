@@ -1,6 +1,17 @@
 from fpdf import FPDF
 import sys, json
 
+info = json.loads(sys.argv[1])
+studentName = info["studentName"]
+email = info["email"]
+education = info["education"]
+experience = info["experience"]
+progLang = info["programmingLanguage"]
+techSkill = info["techSkill"]
+softSkill = info["softSkill"]
+projects = info["project"]
+volunteering = info["volunteering"]
+
 def loadResumeDb():
 	f = open('./routes/pdf/db.json', encoding="utf8")
 	db = json.load(f)
@@ -14,12 +25,12 @@ class PDF(FPDF):
 		
 		#-------------------Name--------------------
 		self.cell(80)
-		self.cell(30, 10, 'Xia Fuxi', 'B', 0, 'C')
+		self.cell(30, 10, studentName, 'B', 0, 'C')
 		self.ln(10)
 		#------------------Email--------------------
 		self.set_font('Arial', '', 14)
 		self.cell(80)
-		self.cell(30, 10, 'fuxi_xia@u.nus.edu', 0, 0, 'C')
+		self.cell(30, 10, email, 0, 0, 'C')
 		# Line Break
 		self.ln(10)
 		
@@ -42,16 +53,6 @@ def populateSection(pdf):
 
 
 if __name__ == "__main__":
-	info = json.loads(sys.argv[1])
-	studentName = info["studentName"]
-	education = info["education"]
-	experience = info["experience"]
-	progLang = info["programmingLanguage"]
-	techSkill = info["techSkill"]
-	softSkill = info["softSkill"]
-	projects = info["project"]
-	volunteering = info["volunteering"]
-
 	db = loadResumeDb()
 	pdf = PDF()
 	pdf.alias_nb_pages()
