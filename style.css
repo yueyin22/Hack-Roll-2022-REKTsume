@@ -82,10 +82,15 @@ body {
 }
 
 .form-content input[type="text"],
-.form-content input[type="password"],
-.form-content input[type="email"],
+.form-content input[type="techSkill"],
+.form-content input[type="workSkill"],
+.form-content input[type="education"],
+.form-content input[type="experience"],
+.form-content input[type="volunteering"],
+.form-content input[type="project"],
+.form-content input[type="programmingLanguage"],
 .form-content select {
-  width: 100%;
+  width: 93%;
   padding: 9px 20px;
   text-align: left;
   border: 0;
