@@ -9,29 +9,6 @@ const project = document.querySelector("#project");
 const volunteering = document.querySelector("#volunteering");
 const button = document.querySelector("#create");
 
-$(function(){
-  var infoDelimit = {
-    studentName: extractText(studentName),
-    education: extractText(education),
-    experience: extractText(experience),
-    programmingLanguage: extractText(programmingLanguage),
-    techSkill: extractText(techSkill),
-    softSkill: extractText(softSkill),
-    project: extractText(project),
-    volunteering: extractText(volunteering),
-  };
-  for (let a=0; a<Object.keys(infoDelimit).length; a++) {
-    var match = a.split(', ');
-    console.log(match);
-  }
-  
-  for (var a in match)
-  {
-      var variable = match[a]
-      console.log(variable)
-  }
-})
-
 function extractText(element) {
   return element.value;
 }
@@ -48,6 +25,10 @@ function serialise() {
     project: extractText(project),
     volunteering: extractText(volunteering),
   };
+  for (let a = 0; a < Object.values(info).length; a++) {
+    var match = Object.values(info)[a].split(", ");
+    console.log(match);
+  }
   cleanedInfo = Object.fromEntries(
     Object.entries(info).filter(([_, v]) => v != null)
   );
