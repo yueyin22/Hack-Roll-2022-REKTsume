@@ -1,4 +1,10 @@
 from fpdf import FPDF
+import sys, json
+
+def loadResumeDb():
+	f = open('db.json')
+	db = json.load(f)
+	return db
 
 class PDF(FPDF):	
 	# Name and email
@@ -35,6 +41,7 @@ def populateSection(pdf):
 
 
 if __name__ == "__main__":
+	db = loadResumeDb()
 	pdf = PDF()
 	pdf.alias_nb_pages()
 	pdf.add_page()
