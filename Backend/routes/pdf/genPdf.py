@@ -7,16 +7,6 @@ def loadResumeDb():
 	f.close()
 	return db
 
-info = sys.argv[1]
-studentName = info["studentName"]
-education = info["education"]
-experience = info["experience"]
-progLang = info["programmingLanguage"]
-techSkill = info["techSkill"]
-softSkill = info["softSkill"]
-projects = info["project"]
-volunteering = info["volunteering"]
-
 class PDF(FPDF):	
 	# Name and email
 	def header(self):
@@ -24,7 +14,7 @@ class PDF(FPDF):
 		
 		#-------------------Name--------------------
 		self.cell(80)
-		self.cell(30, 10, studentName, 'B', 0, 'C')
+		self.cell(30, 10, 'Xia Fuxi', 'B', 0, 'C')
 		self.ln(10)
 		#------------------Email--------------------
 		self.set_font('Arial', '', 14)
@@ -47,11 +37,21 @@ def setSectionHeader(pdf, header):
 	setColor(pdf)
 	pdf.cell(0, 8, header, 1, 1, 'L', True)
 
-def populateSection(pdf, section):
+def populateSection(pdf):
 	pdf.cell(0, 8, '- Messed up overseas volunteering project', 0, 1, 'L')
 
 
 if __name__ == "__main__":
+	info = json.loads(sys.argv[1])
+	studentName = info["studentName"]
+	education = info["education"]
+	experience = info["experience"]
+	progLang = info["programmingLanguage"]
+	techSkill = info["techSkill"]
+	softSkill = info["softSkill"]
+	projects = info["project"]
+	volunteering = info["volunteering"]
+
 	db = loadResumeDb()
 	pdf = PDF()
 	pdf.alias_nb_pages()

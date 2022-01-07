@@ -10,10 +10,9 @@ router.post("/pdf", (req, res) => {
     pythonOptions: ["-u"], // get print results in real-time
     args: JSON.stringify(req.body),
   };
-  console.log(JSON.stringify(req.body));
   PythonShell.run("./routes/pdf/genPdf.py", options, function (err, results) {
     if (err) throw err;
-    // console.log("results: %j", results);
+    console.log("results: %j", results);
   });
 });
 

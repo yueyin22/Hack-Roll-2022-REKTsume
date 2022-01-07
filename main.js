@@ -26,7 +26,6 @@ function serialise() {
   cleanedInfo = Object.fromEntries(
     Object.entries(info).filter(([_, v]) => v != null)
   );
-  console.log(JSON.stringify(cleanedInfo));
   return JSON.stringify(cleanedInfo);
 }
 
@@ -59,18 +58,20 @@ button.addEventListener("click", () => {
 });
 
 (function () {
-  'use strict'
-  const forms = document.querySelectorAll('.requires-validation')
-  Array.from(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
+  "use strict";
+  const forms = document.querySelectorAll(".requires-validation");
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
         if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
+          event.preventDefault();
+          event.stopPropagation();
         }
-  
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
-  
+
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
