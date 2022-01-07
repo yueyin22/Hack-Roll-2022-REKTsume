@@ -7,13 +7,14 @@
     "first": "Successfully completed beginner course in after failing 4 times",
     "second": "Guided a team of 3 to write a “Hello World” program in X",
     "third": "Wrote 7 consecutive lines of  without compiler errors",
-    "fourth": "Completed a Level-1000 module taught in X"
+    "fourth": "Completed a Level-1000 module taught in X",
+    "fifth": "Learnt frameworks of X during Orbital, but have forgotten all of them since"
   },
   "Technical": {
-    "first": "Learnt frameworks X during Orbital, but have forgotten all of them since",
+    "first": "Tried working with X during a personal project, ditched it after 2 days",
     "second": "Experience with X during a module two years ago, forgot everything since",
     "third": "Watched a youtube video about X three years ago",
-    "fourth": "Tried working with X during a personal project, ditched it after 2 days",
+    "fourth": "Expertise in X but could not find the software on desktop",
     "fifth": "",
     "sixth": "",
     "git": "Experience with Git in projects, helping to delete 3 days’ worth of progress during a hackathon using Git"
@@ -24,14 +25,14 @@
     "third": "Displayed X that frightened my colleagues and managers",
     "fourth": "Achieved first-hand knowledge of the pantry supplies due to my X skills",
     "fifth": "Practiced my X skills even in my sleep",
-    "sixth": "",
+    "sixth": ""
     
   },
   "Projects": {
     "first": "Involved in a project for X, assisted in a spectacularly late submission",
     "second": "Contributed one line of comment in X",
     "third": "Helped remove print debug messages in X",
-    "fourth": "",
+    "fourth": "Involved in pushing of empty commits in X to github",
     "fifth": "",
     "sixth": ""
   },
