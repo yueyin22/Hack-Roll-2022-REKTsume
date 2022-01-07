@@ -72,7 +72,7 @@ def unicode_normalise(s):
 
 def populateSection(pdf, section):
 	if section == "Education":
-		pdf.cell(0, 8, education, 0, 1, 'L')
+		pdf.cell(30, 8, education, 0, 1, 'L')
 	else:
 		target = checkSection(section)
 		answer = listToString(info[target])
@@ -86,7 +86,7 @@ def populateSection(pdf, section):
 			index = str(selectedIndex)
 			replacedText = db[section][index].replace('$dynamic', answer)
 			completedText = "- " + unicode_normalise(replacedText)
-			pdf.cell(0, 8, completedText, 0, 1, 'L')
+			pdf.multi_cell(0, 8, completedText, 0, 1, 'L')
 		else:
 			numberOfEntries = len(answers)
 			answerPool = getDbSize(section)
@@ -101,7 +101,7 @@ def populateSection(pdf, section):
 				index = str(selectedIndex)
 				replacedText = db[section][index].replace('$dynamic', answers[i])
 				completedText = "- " + unicode_normalise(replacedText)
-				pdf.cell(0, 8, completedText, 0, 1, 'L')
+				pdf.multi_cell(0, 8, completedText, 0, 1, 'L')
 				usedPool.append(index)
 			
 
