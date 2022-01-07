@@ -4,6 +4,7 @@ import sys, json
 def loadResumeDb():
 	f = open('db.json')
 	db = json.load(f)
+	f.close()
 	return db
 
 class PDF(FPDF):	
