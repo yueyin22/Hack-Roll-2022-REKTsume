@@ -58,6 +58,9 @@ if __name__ == "__main__":
 	pdf.alias_nb_pages()
 	pdf.add_page()
 	pdf.set_font('Arial', '', 12)
-	setSectionHeader(pdf, 'PROJECTS')
-	populateSection(pdf)
+	for key, value in info.items():
+		if key == "studentName" or key == "email":
+			continue
+		setSectionHeader(pdf, key)
+		populateSection(pdf)
 	pdf.output('tut2.pdf', 'F')
