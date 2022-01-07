@@ -26,13 +26,22 @@
         <div class="form-holder">
           <div class="form-content">
             <div class="form-items">
-              <img class="logo" src="Images/cv.png" />
-              <br />
               <h3>REKTsume</h3>
               <p>
                 one-stop resume builder for a <b>Risible</b>,
                 <b>Ridiculous</b> & <b>Ruination</b> experience
               </p>
+              <img
+                class="logo"
+                src="Images/cv.png"
+                style="
+                  padding-bottom: 25px;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                "
+              />
+              <br />
               <form class="requires-validation" novalidate>
                 <div class="col-md-10">
                   <input
@@ -60,44 +69,7 @@
                     Email field cannot be blank & must be valid!
                   </div>
                 </div>
-                <div class="col-md-10 mt-3">
-                  <label class="mb-3 mr-1" for="gender">Gender: </label>
-                  <input
-                    type="radio"
-                    class="btn-check"
-                    name="gender"
-                    id="male"
-                    autocomplete="off"
-                    required
-                  />
-                  <label class="btn btn-sm btn-outline-secondary" for="male"
-                    >Male</label
-                  >
-                  <input
-                    type="radio"
-                    class="btn-check"
-                    name="gender"
-                    id="female"
-                    autocomplete="off"
-                    required
-                  />
-                  <label class="btn btn-sm btn-outline-secondary" for="female"
-                    >Female</label
-                  >
-                  <input
-                    type="radio"
-                    class="btn-check"
-                    name="gender"
-                    id="secret"
-                    autocomplete="off"
-                    required
-                  />
 
-                  <div class="valid-feedback mv-up">You selected a gender!</div>
-                  <div class="invalid-feedback mv-up">
-                    Please select a gender!
-                  </div>
-                </div>
                 <hr
                   style="
                     height: 2px;

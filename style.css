@@ -90,7 +90,7 @@ body {
 .form-content input[type="project"],
 .form-content input[type="programmingLanguage"],
 .form-content select {
-  width: 93%;
+  width: 120%;
   padding: 9px 20px;
   text-align: left;
   border: 0;
