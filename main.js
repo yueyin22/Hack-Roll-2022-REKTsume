@@ -8,6 +8,26 @@ const project = document.querySelector("#project");
 const volunteering = document.querySelector("#volunteering");
 const button = document.querySelector("#create");
 
+$(function(){
+  var infoDelimit = {
+    studentName: extractText(studentName),
+    education: extractText(education),
+    experience: extractText(experience),
+    programmingLanguage: extractText(programmingLanguage),
+    techSkill: extractText(techSkill),
+    softSkill: extractText(softSkill),
+    project: extractText(project),
+    volunteering: extractText(volunteering),
+  };
+  var match = infoDelimit.split(', ')
+  console.log(match)
+  for (var a in match)
+  {
+      var variable = match[a]
+      console.log(variable)
+  }
+})
+
 function extractText(element) {
   return element.value;
 }
