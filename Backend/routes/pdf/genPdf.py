@@ -51,12 +51,13 @@ class PDF(FPDF):
 		self.cell(0, 10, str(self.page_no()), 0, 0, 'C')
 
 def setColor(pdf):
-	pdf.set_draw_color(160, 160, 160)
-	pdf.set_fill_color(160, 160, 160)
+	pdf.set_draw_color(200, 200, 200)
+	pdf.set_fill_color(200, 200, 200)
 
 def setSectionHeader(pdf, header):
 	setColor(pdf)
-	pdf.cell(0, 8, header, 1, 1, 'L', True)
+	pdf.set_font('Arial', 'B', 12)
+	pdf.cell(0, 5, header, 1, 1, 'L', True)
 
 def checkSection(section):
 	for key in convert:
@@ -71,6 +72,7 @@ def unicode_normalise(s):
 	return normalised.decode()
 
 def populateSection(pdf, section):
+	pdf.set_font('Arial', '', 12)
 	if section == "Education":
 		pdf.cell(30, 8, education, 0, 1, 'L')
 	else:
@@ -115,4 +117,4 @@ if __name__ == "__main__":
 			continue
 		setSectionHeader(pdf, convert[key])
 		populateSection(pdf, convert[key])
-	pdf.output('tut2.pdf', 'F')
+	pdf.output('myresume.pdf', 'F')

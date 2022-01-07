@@ -30,19 +30,9 @@ function serialise() {
     project: extractText(project),
     volunteering: extractText(volunteering),
   };
-  /* for (let a = 0; a < Object.values(info).length; a++) {
-    var match = Object.values(info)[a].split(", ");
-    if (match.length > 1) {
-      var index = Object.keys(info)[a];
-      console.log(index);
-      console.log(match);
-      info[index].value = match;
-    }
-  } */
   cleanedInfo = Object.fromEntries(
     Object.entries(info).filter(([_, v]) => v != null)
   );
-  console.log(info);
   return JSON.stringify(cleanedInfo);
 }
 
@@ -62,7 +52,7 @@ function sendData(data) {
         console.log(xhr.responseText);
       } else {
         // Error
-        console.log("Error sending request");
+        console.log("Error sending POST request");
       }
     }
   };
@@ -72,7 +62,42 @@ function sendData(data) {
 button.addEventListener("click", () => {
   studentData = serialise();
   sendData(studentData);
+  if (document.getElementById("download-btn") == null) {
+    addDownloadButton("Download Resume", "download-btn");
+  }
 });
+
+function addDownloadButton(text, id) {
+  //Create an input type dynamically.
+  var element = document.createElement("button");
+  element.type = "button";
+  element.innerHTML = "Download Resume";
+  element.value = text;
+  element.id = id;
+  element.onclick = function () {
+    var url = "http://localhost:3000/get-pdf";
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+
+    xhr.onreadystatechange = function () {
+      // In local files, status is 0 upon success in Mozilla Firefox
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        var status = xhr.status;
+        if (status === 0 || (status >= 200 && status < 400)) {
+          // The request has been completed successfully
+          console.log(xhr.responseText);
+        } else {
+          console.log("Error sending GET request");
+        }
+      }
+    };
+    xhr.send();
+  };
+
+  var foo = document.getElementById("button-bar");
+  //Append the element in page (in span).
+  foo.appendChild(element);
+}
 
 (function () {
   "use strict";
