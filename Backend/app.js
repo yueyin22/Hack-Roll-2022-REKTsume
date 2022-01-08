@@ -4,8 +4,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.options("/pdf", cors());
-app.options("/get-pdf", cors());
+app.use(cors());
 
 const pdfRouter = require("./routes/pdf/genPdf");
 app.use("/", pdfRouter);

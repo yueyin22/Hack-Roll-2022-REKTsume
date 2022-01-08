@@ -37,7 +37,7 @@ function serialise() {
 }
 
 function sendData(data) {
-  var url = "https://peaceful-cove-21083.herokuapp.com/pdf";
+  var url = "http://localhost:3000/pdf";
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url);
 
@@ -75,7 +75,7 @@ function addDownloadButton(text, id) {
   element.value = text;
   element.id = id;
   element.onclick = function () {
-    var url = "https://peaceful-cove-21083.herokuapp.com/get-pdf";
+    var url = "http://localhost:3000/get-pdf";
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url);
 
